@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login & Register</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: white;
+      width: 360px;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-box {
+      transition: all 0.3s ease;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #667eea;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #5a67d8;
+    }
+
+    .toggle-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .toggle-link a {
+      color: #667eea;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Login Form -->
+  <div id="loginForm" class="form-box">
+    <h2>Login</h2>
+    <div class="input-group">
+      <label for="loginUsername">Username</label>
+      <input type="text" id="loginUsername" required />
+    </div>
+    <div class="input-group">
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" required />
+    </div>
+    <button onclick="login()">Login</button>
+    <p class="toggle-link">Don't have an account? <a onclick="showRegister()">Register</a></p>
+  </div>
+
+  <!-- Register Form -->
+  <div id="registerForm" class="form-box hidden">
+    <h2>Register</h2>
+    <div class="input-group">
+      <label for="registerUsername">Username</label>
+      <input type="text" id="registerUsername" required />
+    </div>
+    <div class="input-group">
+      <label for="registerPassword">Password</label>
+      <input type="password" id="registerPassword" required />
+    </div>
+    <button onclick="register()">Register</button>
+    <p class="toggle-link">Already have an account? <a onclick="showLogin()">Login</a></p>
+  </div>
+</div>
+
+<script>
+  function showRegister() {
+    document.getElementById('loginForm').classList.add('hidden');
+    document.getElementById('registerForm').classList.remove('hidden');
+  }
+
+  function showLogin() {
+    document.getElementById('registerForm').classList.add('hidden');
+    document.getElementById('loginForm').classList.remove('hidden');
+  }
+
+  function register() {
+    const username = document.getElementById('registerUsername').value;
+    const password = document.getElementById('registerPassword').value;
+    // Simulating storing credentials (not secure!)
+    localStorage.setItem('user', username);
+    localStorage.setItem('pass', password);
+    alert('Registration Successful!');
+    showLogin();
+  }
+
+  function login() {
+    const username = document.getElementById('loginUsername').value;
+    const password = document.getElementById('loginPassword').value;
+    const storedUser = localStorage.getItem('user');
+    const storedPass = localStorage.getItem('pass');
+
+    if (username === storedUser && password === storedPass) {
+      alert('Login Successful!');
+    } else {
+      alert('Invalid Credentials!');
+    }
+  }
+</script>
+
+</body>
+</html>
+``

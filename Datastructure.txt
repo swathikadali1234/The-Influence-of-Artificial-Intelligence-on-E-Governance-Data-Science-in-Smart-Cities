@@ -1,0 +1,49 @@
+The Influence of Artificial Intelligence on E-Governance and Cybersecurity in Smart Cities
+
+
+IEEE Transaction on Machine Learning,Volume:11,Issue Date:14.July.2023
+
+
+Artificial intelligence, cybersecurity, e-Governance, stakeholder involvement, machine
+learning, computer crime, smart cities, data privacy.
+
+
+The_Influence_of_Artificial_Intelligence
+
+
+
+the_influence_of_artificial_intelligence
+
+
+
+cyber_attack_detection
+
+
+Fid	
+Timestamp	
+Source_IP_Address	
+Destination_IP_Address	
+Source_Port	
+Destination_Port	
+Protocol	
+Packet_Length	
+Packet_Type	
+Traffic_Type	
+Payload_Data	
+Malware_Indicators	
+Anomaly_Scores	
+Alerts_Warnings		
+Attack_Signature	
+Action_Taken	
+Severity_Level	
+Device_Information	
+Network_Segment	
+Geo_City_location_Data	
+Proxy_Information	
+Firewall_Logs	
+IDS_IPS_Alerts	
+Log_Source
+Prediction
+
+
+
